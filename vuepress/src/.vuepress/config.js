@@ -1,10 +1,11 @@
 const { description } = require('../../package')
 
 module.exports = {
+  base:'',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#title
    */
-  title: 'Vuepress Docs Boilerplate',
+  title: '使用手册',
   /**
    * Ref：https://v1.vuepress.vuejs.org/config/#description
    */
@@ -18,7 +19,10 @@ module.exports = {
   head: [
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['script', { src: '/js/jquery.slim.min.js' }],
+    ['script', { src: '/js/fancybox/jquery.fancybox.min.js' }],
+    ['link', { rel: 'stylesheet', type: 'text/css', href: '/js/fancybox/jquery.fancybox.min.css' }]
   ],
 
   /**
@@ -27,6 +31,7 @@ module.exports = {
    * ref：https://v1.vuepress.vuejs.org/theme/default-theme-config.html
    */
   themeConfig: {
+    searchMaxSuggestions: 10,
     repo: '',
     editLinks: false,
     docsDir: '',
@@ -40,11 +45,7 @@ module.exports = {
       {
         text: 'Config',
         link: '/config/'
-      },
-      {
-        text: 'VuePress',
-        link: 'https://v1.vuepress.vuejs.org'
-      }
+      }, 
     ],
     sidebar: {
       '/guide/': [
